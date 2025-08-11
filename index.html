@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <form action="index.html" method="post" enctype="multipart/form-data">
+    <h1>Login</h1>
+
+    <input type="text" id="username" name="username" placeholder="Username" minlength="6" maxlength="15" required><br>
+    <input type="password" id="password" name="password" placeholder="Password" minlength="6" maxlength="15" required><br>
+
+    <div class="Rremembre">
+      <label><input type="checkbox" id="checkbox"> Remember me</label>
+      <a href="#">Forgot password?</a>
+    </div>
+
+    <input type="submit" id="login"value="Login">
+    <p>Don't have an account?<a href="#" class="register-link">Register</a></p>
+
+  </form>
+  <script>
+  document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevents page reload
+    // You can add your login logic here
+  });
+</script>
+</body>
+
+</html>

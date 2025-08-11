@@ -1,0 +1,153 @@
+body {
+  background:
+    linear-gradient(to bottom right, hwb(210 60% 10% / 0.168), hwb(0 70% 15% / 0.114)),
+    url('hi.jpeg') no-repeat center center fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form {
+ background: linear-gradient(to bottom right, hwb(210 60% 10% / 0.615), hwb(0 70% 15% / 0.522));
+  border-radius: 20px;
+  max-width: 500px;             /* VERY LARGE width */
+  width: 100%;
+  text-align: center;
+  padding: 60px;                /* More space inside */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  font-size: 1.5rem;      
+  position: absolute;        /* Large font size for all inside */
+}
+
+@keyframes sin {
+    to {
+        --angle: 360deg;
+    }
+
+    from {
+        --angle: 0deg;
+    }
+}
+
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+form:hover::after {
+    --angle: 0deg;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 22px);
+    background: conic-gradient(
+        from var(--angle),
+        lab(67.13% -0.98 -44.42 / 0.53),
+        hwb(126 51% 5%),
+        hwb(0 55% 13%),
+        hwb(52 53% 0% / 0.608)
+    );
+    opacity: 0.8;
+    filter: blur(1.5rem); 
+    z-index: -3;
+    animation: rotateGradient 3s linear infinite;
+}
+
+@keyframes rotateGradient {
+    to {
+        --angle: 360deg;
+    }
+    from {
+        --angle: 0deg;
+    }
+}
+/* Refactored CSS */
+.form-input {
+  width: 100%;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  background: transparent;
+  border: 2px solid hwb(0 0% 100% / 0.823);
+  color: hwb(0 0% 100%);
+  outline: none;
+}
+
+
+#username,
+#password {
+  width: 100%;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  background: transparent;
+   border: 2px solid hwb(0 0% 100% / 0.823);
+  color: hwb(0 0% 100%);
+  outline: none;
+  transform: translateX(-15px);
+}
+input::placeholder {
+  color: hwb(0 0% 100% / 0.514);
+}
+.Rremembre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.register-link {
+  margin-left: 10px;
+  text-decoration: underline;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+ background-color: #333;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #555;
+}
+#login {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 40px;
+  background: transparent;
+  border: 2px solid hwb(0 0% 100% / 0.823);
+  color: hwb(0 0% 100% / 0.823);
+  outline: none;
+  transform: translateX(-5px);
+}
+#checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  transform: translateX(2px);
+  transform: translatey(2px);
+    
+  cursor: pointer;
+  }
+#login:hover {
+  background: hwb(0 0% 100% / 0.823);
+  color: hwb(0 99% 0%);
+ /* ← Invalid value (should be -10px) */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
